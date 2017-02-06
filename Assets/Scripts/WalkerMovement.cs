@@ -13,7 +13,7 @@ public class WalkerMovement : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void LateUpdate ()
 	{
 	    transform.position += walker.transform.localPosition;
 	    walker.transform.localPosition = Vector3.zero;

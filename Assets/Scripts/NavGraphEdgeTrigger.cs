@@ -3,14 +3,16 @@ using System.Collections;
 
 using SWS;
 
-[RequireComponent(typeof(Collider))]
-public class NavGraphEdgeTrigger : MonoBehaviour, IGvrGazeResponder
+//[RequireComponent(typeof(Collider))]
+public class NavGraphEdgeTrigger : MonoBehaviour
 {
     // Reference to path
-    public PathManager pathContainer;
+    public NavGraphEdgeMovement EdgeMovement;
+    public bool ReverseMovement = false;
+    public bool Enabled = true;
 
-    public Material inactiveMaterial;
-    public Material gazedAtMaterial;
+    public Material InactiveMaterial;
+    public Material GazedAtMaterial;
 
     //private float rotationSpeed;
 
@@ -30,35 +32,60 @@ public class NavGraphEdgeTrigger : MonoBehaviour, IGvrGazeResponder
 
     public void SetGazedAt(bool gazedAt)
     {
-        if (inactiveMaterial != null && gazedAtMaterial != null)
+        Transform cube = transform.FindChild("Cube");
+        if (InactiveMaterial != null && GazedAtMaterial != null)
         {
-            GetComponent<Renderer>().material = gazedAt ? gazedAtMaterial : inactiveMaterial;
+            cube.GetComponent<Renderer>().material = gazedAt ? GazedAtMaterial : InactiveMaterial;
             return;
         }
-        GetComponent<Renderer>().material.color = gazedAt ? Color.green : Color.red;
+        cube.GetComponent<Renderer>().material.color = gazedAt ? Color.green : Color.red;
     }
 
-    // TODO Trigger movement function here
-    public void StartMovement(splineMove movement)
+    public void Hide()
     {
-        movement.pathContainer = this.pathContainer;
-        movement.reverse = false;
-        movement.StartMove();
+        SetGazedAt(false);
+        gameObject.SetActive(false);
     }
 
-    public void StartMovement_Reverse(splineMove movement)
+    public void UnHide()
     {
-        movement.pathContainer = this.pathContainer;
-        movement.reverse = true;
-        movement.StartMove();
+        if(!Enabled)
+            return;
+
+        gameObject.SetActive(true);
+        SetGazedAt(false);
     }
 
-    #region IGvrGazeResponder implementation
+    public void Enable()
+    {
+        Enabled = true;
+
+        // If the parent node is currently the active one, reveal the trigger
+        if (NavGraphManager.instance.ActiveNode == transform.parent)
+            UnHide();
+    }
+
+    public void Disable()
+    {
+        Hide();
+
+        SetGazedAt(false);
+        Enabled = false;            
+    }
+
+    // Trigger movement function here
+    public void StartMovement(splineMove mover)
+    {
+        EdgeMovement.StartMovement(mover, ReverseMovement);
+    }
 
     /// Called when the user is looking on a GameObject with this script,
     /// as long as it is set to an appropriate layer (see GvrGaze).
     public void OnGazeEnter()
     {
+        if (!Enabled)
+            return;
+
         SetGazedAt(true);
     }
 
@@ -66,14 +93,18 @@ public class NavGraphEdgeTrigger : MonoBehaviour, IGvrGazeResponder
     /// was already called.
     public void OnGazeExit()
     {
+        if (!Enabled)
+            return;
+
         SetGazedAt(false);
     }
 
     /// Called when the viewer's trigger is used, between OnGazeEnter and OnPointerExit.
     public void OnGazeTrigger()
     {
-        //TODO Trigger movement
-    }
+        if (!Enabled)
+            return;
 
-    #endregion
+        StartMovement(NavGraphManager.instance.mover); 
+    }
 }
