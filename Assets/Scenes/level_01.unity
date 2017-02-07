@@ -386,6 +386,11 @@ Prefab:
       propertyPath: EndNode
       value: 
       objectReference: {fileID: 385929188}
+    - target: {fileID: 114000010896437884, guid: 8db979804ef498d488689b7f2b261e64,
+        type: 2}
+      propertyPath: movementType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8db979804ef498d488689b7f2b261e64, type: 2}
   m_IsPrefabParent: 0

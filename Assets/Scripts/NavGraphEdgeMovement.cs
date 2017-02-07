@@ -9,6 +9,7 @@ public class NavGraphEdgeMovement : MonoBehaviour {
 
     public NavGraphNode StartNode;
     public NavGraphNode EndNode;
+    public DG.Tweening.PathType movementType;
 
     // Trigger movement function here
     public void StartMovement(splineMove mover, bool reverseMovement)
@@ -17,6 +18,7 @@ public class NavGraphEdgeMovement : MonoBehaviour {
 
         mover.pathContainer = this.PathContainer;
         mover.reverse = reverseMovement;
+        mover.pathType = movementType;
 
         // TODO Attach start and arrive events
         mover.events.Clear();
