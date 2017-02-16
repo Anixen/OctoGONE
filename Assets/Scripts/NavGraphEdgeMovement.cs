@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-
 using SWS;
 using UnityEngine.Events;
 
@@ -11,6 +9,7 @@ public class NavGraphEdgeMovement : MonoBehaviour {
 
     public NavGraphNode StartNode;
     public NavGraphNode EndNode;
+    public DG.Tweening.PathType movementType;
 
     // Trigger movement function here
     public void StartMovement(splineMove mover, bool reverseMovement)
@@ -19,6 +18,7 @@ public class NavGraphEdgeMovement : MonoBehaviour {
 
         mover.pathContainer = this.PathContainer;
         mover.reverse = reverseMovement;
+        mover.pathType = movementType;
 
         // TODO Attach start and arrive events
         mover.events.Clear();
@@ -67,9 +67,16 @@ public class NavGraphEdgeMovement : MonoBehaviour {
         Debug.Log("Finished Movement (Reverse)");
     }
 
+    public void updateSpline()
+    {
+        Debug.Log("Update spline of " + name);
+        PathContainer.gameObject.transform.GetChild(0).transform.position = StartNode.transform.position;
+        PathContainer.gameObject.transform.GetChild(PathContainer.waypoints.Length - 1).transform.position = EndNode.transform.position;
+    } 
+
     // Use this for initialization
     void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
