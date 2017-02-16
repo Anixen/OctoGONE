@@ -103,7 +103,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &235621909
 Transform:
@@ -170,7 +170,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000010279998876, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
       propertyPath: m_Name
-      value: Obelisque (3)
+      value: level2_obelisque_003
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010279998876, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
@@ -218,6 +222,14 @@ Prefab:
     - target: {fileID: 4000011105055732, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010279998876, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010279998876, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
+      propertyPath: m_Name
+      value: level2_obelisque_001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
@@ -268,7 +280,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000010279998876, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
       propertyPath: m_Name
-      value: Obelisque (2)
+      value: level2_obelisque_002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010279998876, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
@@ -320,6 +336,10 @@ Prefab:
     - target: {fileID: 100000, guid: 793f679c5d148c745bf782a29688c388, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 793f679c5d148c745bf782a29688c388, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 793f679c5d148c745bf782a29688c388, type: 3}
@@ -433,6 +453,10 @@ Prefab:
     - target: {fileID: 100000, guid: cc03b7df6a0fcec4189881d5d94e75c5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc03b7df6a0fcec4189881d5d94e75c5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc03b7df6a0fcec4189881d5d94e75c5, type: 3}
@@ -567,6 +591,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3e51834ba3d69ec499454c33cfb695d0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e51834ba3d69ec499454c33cfb695d0, type: 3}
   m_IsPrefabParent: 0
@@ -613,6 +641,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2e61cf0f0a1e0e54bb80e286c88b8556, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e61cf0f0a1e0e54bb80e286c88b8556, type: 3}
   m_IsPrefabParent: 0
@@ -658,6 +690,10 @@ Prefab:
     - target: {fileID: 400000, guid: 6c3f0fcfe223bca4f873d7c9770347e4, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c3f0fcfe223bca4f873d7c9770347e4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c3f0fcfe223bca4f873d7c9770347e4, type: 3}
@@ -713,6 +749,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000014110465710, guid: c0763e80f5533704bb3b484361c5b9b7, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014110465710, guid: c0763e80f5533704bb3b484361c5b9b7, type: 2}
+      propertyPath: m_Name
+      value: portail
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0763e80f5533704bb3b484361c5b9b7, type: 2}
   m_IsPrefabParent: 0
@@ -759,6 +803,10 @@ Prefab:
     - target: {fileID: 400000, guid: d5ad969cff76c4b4fac1a7751df7e4db, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d5ad969cff76c4b4fac1a7751df7e4db, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5ad969cff76c4b4fac1a7751df7e4db, type: 3}
@@ -808,7 +856,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000010279998876, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
       propertyPath: m_Name
-      value: Obelisque (1)
+      value: level2_obelisque_000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010279998876, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 49413e253a5a8e64bbff1d2c29714f7f, type: 2}
