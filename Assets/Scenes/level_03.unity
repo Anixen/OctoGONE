@@ -131,7 +131,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012501517888, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_Name
-      value: Passerelle_Rectangulaire (6)
+      value: level3_passerelle_rectangulaire_006
       objectReference: {fileID: 0}
     - target: {fileID: 4000011194199214, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -188,6 +188,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012501517888, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
+      propertyPath: m_Name
+      value: level3_passerelle_rectangulaire_000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
   m_IsPrefabParent: 0
@@ -237,7 +241,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012501517888, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_Name
-      value: Passerelle_Rectangulaire (8)
+      value: level3_passerelle_rectangulaire_008
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
@@ -342,7 +346,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000011239468976, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
       propertyPath: m_Name
-      value: Interrupteur (1)
+      value: level3_interrupteur_001
       objectReference: {fileID: 0}
     - target: {fileID: 4000012612899160, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -397,7 +401,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012501517888, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_Name
-      value: Passerelle_Rectangulaire (3)
+      value: level3_passerelle_rectangulaire_003
       objectReference: {fileID: 0}
     - target: {fileID: 4000011194199214, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -452,7 +456,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012501517888, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_Name
-      value: Passerelle_Rectangulaire (5)
+      value: level3_passerelle_rectangulaire_005
       objectReference: {fileID: 0}
     - target: {fileID: 4000011194199214, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -557,7 +561,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012501517888, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_Name
-      value: Passerelle_Rectangulaire (2)
+      value: level3_passerelle_rectangulaire_002
       objectReference: {fileID: 0}
     - target: {fileID: 4000011194199214, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -616,7 +620,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000010246426754, guid: e3d397079fb70284da468f280a55d97f, type: 2}
       propertyPath: m_Name
-      value: Passerelle_Circulaire (1)
+      value: level3_passerelle_circulaire_001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3d397079fb70284da468f280a55d97f, type: 2}
@@ -717,7 +721,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012501517888, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_Name
-      value: Passerelle_Rectangulaire (7)
+      value: level3_passerelle_rectangulaire_007
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
@@ -857,6 +861,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 129.975
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011239468976, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
+      propertyPath: m_Name
+      value: level3_interrupteur_000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
   m_IsPrefabParent: 0
@@ -906,7 +914,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012501517888, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_Name
-      value: Passerelle_Rectangulaire (1)
+      value: level3_passerelle_rectangulaire_001
       objectReference: {fileID: 0}
     - target: {fileID: 4000011194199214, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1053,7 +1061,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000011239468976, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
       propertyPath: m_Name
-      value: Interrupteur (2)
+      value: level3_interrupteur_002
       objectReference: {fileID: 0}
     - target: {fileID: 4000012612899160, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1156,6 +1164,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010246426754, guid: e3d397079fb70284da468f280a55d97f, type: 2}
+      propertyPath: m_Name
+      value: level3_passerelle_circulaire_000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3d397079fb70284da468f280a55d97f, type: 2}
   m_IsPrefabParent: 0
@@ -1252,6 +1264,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1000014110465710, guid: c0763e80f5533704bb3b484361c5b9b7, type: 2}
+      propertyPath: m_Name
+      value: level3_portail
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0763e80f5533704bb3b484361c5b9b7, type: 2}
   m_IsPrefabParent: 0
@@ -1301,7 +1317,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012501517888, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_Name
-      value: Passerelle_Rectangulaire (4)
+      value: level3_passerelle_rectangulaire_004
       objectReference: {fileID: 0}
     - target: {fileID: 4000011194199214, guid: cf4606c3825f04d468c92cd8921448ea, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
