@@ -5,8 +5,8 @@ using UnityEditor;
 [CustomEditor(typeof(NavGraphNode))]
 public class NavGraphNodeEditor : Editor {
 
-    //if this path is selected, display small info boxes above all waypoint positions
-    //also display handles for the waypoints
+    // if this node is selected, display small info box above the node
+    // also display a handle
     void OnSceneGUI()
     {
         Vector3 nodePos = Target.transform.position;
