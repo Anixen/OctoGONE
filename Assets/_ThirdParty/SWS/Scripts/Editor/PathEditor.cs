@@ -372,12 +372,17 @@ namespace SWS
                 }
 
                 //draw handles per waypoint, clamp size
+                // ignore start and end points
+                if(i == 0 || i == waypoints.Length - 1)
+                    continue;
+
                 Handles.color = m_Color2.colorValue;
                 size = Mathf.Clamp(size, 0, 1.2f);
                 Vector3 newPos = Handles.FreeMoveHandle(wpPos, Quaternion.identity,
                                  size, Vector3.zero, Handles.SphereCap);
                 Handles.RadiusHandle(Quaternion.identity, wpPos, size / 2);
 
+                
                 if (wpPos != newPos)
                 {
                     Undo.RecordObject(waypoints[i], "Move Handles");
