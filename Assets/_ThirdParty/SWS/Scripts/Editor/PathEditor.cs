@@ -355,7 +355,7 @@ namespace SWS
             {
                 if (!waypoints[i]) continue;
                 wpPos = waypoints[i].position;
-                size = HandleUtility.GetHandleSize(wpPos) * 0.4f;
+                size = HandleUtility.GetHandleSize(wpPos) * 0.2f;
 
                 //do not draw waypoint header if too far away
                 if (size < 3f)
