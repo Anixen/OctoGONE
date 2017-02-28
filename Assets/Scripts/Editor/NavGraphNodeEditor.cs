@@ -10,7 +10,7 @@ public class NavGraphNodeEditor : Editor {
     void OnSceneGUI()
     {
         Vector3 nodePos = Target.transform.position;
-        float size = HandleUtility.GetHandleSize(nodePos) * 0.4f;
+        float size = HandleUtility.GetHandleSize(nodePos) * 0.5f;
 
         //do not draw node header if too far away
         if (size < 3f)

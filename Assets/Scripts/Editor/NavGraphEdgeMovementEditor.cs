@@ -20,7 +20,7 @@ public class NavGraphEdgeMovementEditor : Editor {
 
         // draw start nodes
         nodePos = Target.StartNode.transform.position;
-        size = HandleUtility.GetHandleSize(nodePos) * 0.4f;
+        size = HandleUtility.GetHandleSize(nodePos) * 0.5f;
 
         //do not draw node header if too far away
         if (size < 3f)
@@ -53,7 +53,7 @@ public class NavGraphEdgeMovementEditor : Editor {
 
         // draw end nodes
         nodePos = Target.EndNode.transform.position;
-        size = HandleUtility.GetHandleSize(nodePos) * 0.4f;
+        size = HandleUtility.GetHandleSize(nodePos) * 0.5f;
 
         //do not draw node header if too far away
         if (size < 3f)
