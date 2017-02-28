@@ -13,9 +13,7 @@ public class NavGraphManagerEditor : Editor {
         if (GUILayout.Button("Update Splines")) {
             Debug.Log("Updating splines");
                 
-            NavGraphEdgeMovement[] edges = Target.gameObject.GetComponentsInChildren<NavGraphEdgeMovement>();
-            foreach (NavGraphEdgeMovement edge in edges)
-                edge.updateSpline();
+            Target.UpdateSplines();
         }
         GUILayout.EndVertical();
     }

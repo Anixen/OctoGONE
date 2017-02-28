@@ -40,4 +40,11 @@ public class NavGraphManager : MonoBehaviour {
         get { return activeNode; }
         set { activeNode = value; Debug.Log("New Active Node : " + activeNode.name);}
     }
+
+    public void UpdateSplines()
+    {
+        NavGraphEdgeMovement[] edges = gameObject.GetComponentsInChildren<NavGraphEdgeMovement>();
+        foreach (NavGraphEdgeMovement edge in edges)
+            edge.updateSpline();
+    }
 }
