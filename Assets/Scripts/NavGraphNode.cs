@@ -22,8 +22,15 @@ public class NavGraphNode : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        /*
+        if (transform.hasChanged)
+        {
+            Debug.Log("Node moved : " + this.name);
+            transform.parent.GetComponent<NavGraphManager>().UpdateSplines();
+            transform.hasChanged = false;
+        }
+        //*/
+    }
 
     void OnDrawGizmos()
     {

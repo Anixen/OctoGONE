@@ -47,6 +47,7 @@ public class NavGraphEdgeMovementEditor : Editor {
         {
             Undo.RecordObject(Target.StartNode.transform, "Move Handles");
             Target.StartNode.transform.position = newPos;
+            Target.transform.parent.GetComponent<NavGraphManager>().UpdateSplines();
         }
 
 
@@ -79,6 +80,7 @@ public class NavGraphEdgeMovementEditor : Editor {
         {
             Undo.RecordObject(Target.EndNode.transform, "Move Handles");
             Target.EndNode.transform.position = newPos;
+            Target.transform.parent.GetComponent<NavGraphManager>().UpdateSplines();
         }
 
 

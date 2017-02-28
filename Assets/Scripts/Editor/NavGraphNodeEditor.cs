@@ -32,6 +32,13 @@ public class NavGraphNodeEditor : Editor {
         Vector3 newPos = Handles.FreeMoveHandle(nodePos, Quaternion.identity,
                          size, Vector3.zero, Handles.SphereCap);
         Handles.RadiusHandle(Quaternion.identity, nodePos, size / 2);
+
+        if (nodePos != newPos)
+        {
+            Undo.RecordObject(Target.transform, "Move Handles");
+            Target.transform.position = newPos;
+            Target.transform.parent.GetComponent<NavGraphManager>().UpdateSplines();
+        }
     }
 
     NavGraphNode Target { get { return target as NavGraphNode; } }
