@@ -37,7 +37,6 @@ public class NavGraphNodeEditor : Editor {
         {
             Undo.RecordObject(Target.transform, "Move Handles");
             Target.transform.position = newPos;
-            Target.transform.parent.GetComponent<NavGraphManager>().UpdateSplines();
         }
     }
 
