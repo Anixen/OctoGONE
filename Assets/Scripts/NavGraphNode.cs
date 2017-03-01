@@ -21,9 +21,26 @@ public class NavGraphNode : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
-	}
+	void Update ()
+    {
+
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 0.7f * GetHandleSize(transform.position));
+    }
+
+    public virtual float GetHandleSize(Vector3 pos)
+    {
+        float handleSize = 1f;
+        #if UNITY_EDITOR
+        handleSize = UnityEditor.HandleUtility.GetHandleSize(pos) * 0.4f;
+        handleSize = Mathf.Clamp(handleSize, 0, 1.2f);
+        #endif
+        return handleSize;
+    }
 
     void OnEnterNode()
     {
