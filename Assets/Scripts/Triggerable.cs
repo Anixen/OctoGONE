@@ -10,6 +10,16 @@ public class Triggerable : MonoBehaviour
 
     public UnityEvent TriggeredEvent;
 
+    public void Lock()
+    {
+        locked = true;
+    }
+
+    public void Unlock()
+    {
+        locked = false;
+    }
+
     public void Execute()
     {
         // Check the triggerable is not locked and can be repeated
