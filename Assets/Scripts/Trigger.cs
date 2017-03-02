@@ -5,8 +5,15 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Collider))]
 public class Trigger : MonoBehaviour
 {
-    private Collider collider;
+    public bool locked = false;
+    public bool repeatable = true;
+    private int timesTriggered = 0;
+
     public List<Triggerable> Triggerables;
+
+
+    private Collider collider;
+
 
     void Awake()
     {
@@ -40,10 +47,17 @@ public class Trigger : MonoBehaviour
     /// Called when the viewer's trigger is used, between OnGazeEnter and OnPointerExit.
     public void OnGazeTrigger()
     {
+        // Check the triggerable is not locked and can be repeated
+        if (locked
+            || (!repeatable && timesTriggered > 0))
+            return;
+
         // Execute the associated Triggerables
         foreach (var t in Triggerables)
         {
             t.Execute();
         }
+
+        ++timesTriggered;
     }
 }
