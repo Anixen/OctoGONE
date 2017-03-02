@@ -18,7 +18,7 @@ public class NavGraphEdgeTrigger : MonoBehaviour
 
     void Start()
     {
-        SetGazedAt(false);
+        Hide();
     }
 
     void LateUpdate()
