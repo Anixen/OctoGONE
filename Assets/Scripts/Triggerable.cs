@@ -10,16 +10,6 @@ public class Triggerable : MonoBehaviour
 
     public UnityEvent TriggeredEvent;
 
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void Execute()
     {
         // Check the triggerable is not locked and can be repeated

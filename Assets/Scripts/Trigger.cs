@@ -13,16 +13,6 @@ public class Trigger : MonoBehaviour
         collider = GetComponent<Collider>();
     }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public void Enable()
     {
         collider.enabled = true;
