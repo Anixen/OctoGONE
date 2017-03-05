@@ -39,6 +39,10 @@ public class Trigger : MonoBehaviour
         eventTrigger.triggers.Add(pointerClick_entry);
     }
 
+    public void Start()
+    {
+        Disable();
+    }
 
     public void Enable()
     {

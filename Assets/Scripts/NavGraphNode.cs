@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Events;
 
 public class NavGraphNode : MonoBehaviour
@@ -7,7 +8,11 @@ public class NavGraphNode : MonoBehaviour
     public UnityEvent LeavingNodeEvent;
     public UnityEvent EnteringNodeEvent;
 
-    //Awake is always called before any Start functions
+    // Environnment triggers that should be enabled/disabled unpon entering/leaving the node
+    // The movement triggers are assigned as child objects 
+    public List<Trigger> Triggers;
+
+    // Awake is always called before any Start functions
     void Awake()
     {
         LeavingNodeEvent.AddListener(OnLeaveNode);
@@ -48,8 +53,9 @@ public class NavGraphNode : MonoBehaviour
 
         NavGraphManager.instance.ActiveNode = this;
 
-        // TODO
         // De-activate all associted environment triggers
+        foreach (var trigger in Triggers)
+            trigger.Enable();
 
         // Activate all associated (children) movement triggers
         foreach (Transform child in transform)
@@ -63,8 +69,9 @@ public class NavGraphNode : MonoBehaviour
     void OnLeaveNode()
     {
         Debug.Log("Leaving " + this.name);
-        // TODO
         // De-activate all associted environment triggers
+        foreach (var trigger in Triggers)
+            trigger.Disable();
 
         // De-activate all associated (children) movement triggers
         foreach (Transform child in transform)

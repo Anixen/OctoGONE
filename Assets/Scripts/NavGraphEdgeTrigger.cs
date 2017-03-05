@@ -2,6 +2,7 @@
 using System.Collections;
 
 using SWS;
+using UnityEngine.EventSystems;
 
 //[RequireComponent(typeof(Collider))]
 public class NavGraphEdgeTrigger : MonoBehaviour
@@ -15,6 +16,29 @@ public class NavGraphEdgeTrigger : MonoBehaviour
     public Material GazedAtMaterial;
 
     //private float rotationSpeed;
+
+    void Awake()
+    {
+        EventTrigger eventTrigger = transform.GetChild(0).GetComponent<EventTrigger>();
+        if (eventTrigger != null)
+        {
+            // Set up entries here intead of doing it manually
+            EventTrigger.Entry pointerEnter_entry = new EventTrigger.Entry();
+            pointerEnter_entry.eventID = EventTriggerType.PointerEnter;
+            pointerEnter_entry.callback.AddListener(OnGazeEnter);
+            eventTrigger.triggers.Add(pointerEnter_entry);
+
+            EventTrigger.Entry pointerExit_entry = new EventTrigger.Entry();
+            pointerExit_entry.eventID = EventTriggerType.PointerExit;
+            pointerExit_entry.callback.AddListener(OnGazeExit);
+            eventTrigger.triggers.Add(pointerExit_entry);
+
+            EventTrigger.Entry pointerClick_entry = new EventTrigger.Entry();
+            pointerClick_entry.eventID = EventTriggerType.PointerClick;
+            pointerClick_entry.callback.AddListener(OnGazeTrigger);
+            eventTrigger.triggers.Add(pointerClick_entry);
+        }
+    }
 
     void Start()
     {
@@ -81,7 +105,7 @@ public class NavGraphEdgeTrigger : MonoBehaviour
 
     /// Called when the user is looking on a GameObject with this script,
     /// as long as it is set to an appropriate layer (see GvrGaze).
-    public void OnGazeEnter()
+    public void OnGazeEnter(BaseEventData data)
     {
         if (!Enabled)
             return;
@@ -91,7 +115,7 @@ public class NavGraphEdgeTrigger : MonoBehaviour
 
     /// Called when the user stops looking on the GameObject, after OnGazeEnter
     /// was already called.
-    public void OnGazeExit()
+    public void OnGazeExit(BaseEventData data)
     {
         if (!Enabled)
             return;
@@ -100,7 +124,7 @@ public class NavGraphEdgeTrigger : MonoBehaviour
     }
 
     /// Called when the viewer's trigger is used, between OnGazeEnter and OnPointerExit.
-    public void OnGazeTrigger()
+    public void OnGazeTrigger(BaseEventData data)
     {
         if (!Enabled)
             return;
