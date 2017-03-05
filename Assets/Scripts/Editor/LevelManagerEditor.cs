@@ -4,33 +4,26 @@ using UnityEditor;
 [CustomEditor(typeof(LevelManager))]
 public class LevelManagerEditor : Editor
 {
+    public string LevelToLoad = "level_00";
 
     public override void OnInspectorGUI()
     {
         GUILayout.BeginVertical();
 
-
         DrawDefaultInspector();
 
-        
-        if (GUILayout.Button("Load Level 00"))
-        {
-            Debug.Log("Loading Level 00");
-            Target.Load("level_00");
-        }
 
-        if (GUILayout.Button("Load Level 01"))
-        {
-            Debug.Log("Loading Level 01");
-            Target.Load("level_01");
-        }
+        GUILayout.BeginHorizontal();
 
-        if (GUILayout.Button("Load Level 02"))
+        LevelToLoad = GUILayout.TextField(LevelToLoad);
+
+        if (GUILayout.Button("Load Level"))
         {
-            Debug.Log("Loading Level 02");
-            Target.Load("level_02");
+            Debug.Log("Loading Level : " + LevelToLoad);
+            Target.Load(LevelToLoad);
         }
-        //*/
+        GUILayout.EndHorizontal();
+
         GUILayout.EndVertical();
     }
 
