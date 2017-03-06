@@ -7,11 +7,13 @@ public class NavGraphEdgeMovement : MonoBehaviour {
 
     // Reference to path
     public PathManager PathContainer;
+    public NavGraphEdgeTrigger startTrigger, endTrigger;
 
     public NavGraphNode StartNode;
     public NavGraphNode EndNode;
     public DG.Tweening.PathType movementType;
 
+    public GameObject EdgeTrigger; // Prefab
 
     void OnDrawGizmos()
     {
