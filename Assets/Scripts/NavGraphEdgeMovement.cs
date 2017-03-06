@@ -11,6 +11,13 @@ public class NavGraphEdgeMovement : MonoBehaviour {
     public NavGraphNode EndNode;
     public DG.Tweening.PathType movementType;
 
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        WaypointManager.DrawCurved(PathContainer.GetPathPoints());
+    }
+
     // Trigger movement function here
     public void StartMovement(splineMove mover, bool reverseMovement)
     {
