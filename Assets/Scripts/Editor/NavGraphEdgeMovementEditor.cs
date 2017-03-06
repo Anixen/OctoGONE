@@ -121,6 +121,95 @@ public class NavGraphEdgeMovementEditor : Editor {
                 waypoints[i].position = newPos;
             }
         }
+
+        // Draw Triggers associated with this edge for start and end nodes
+        NavGraphEdgeTrigger[] edgesTriggers_start = Target.StartNode.gameObject.GetComponentsInChildren<NavGraphEdgeTrigger>();
+        foreach (NavGraphEdgeTrigger edgeTrigger in edgesTriggers_start)
+        {
+            if(edgeTrigger.EdgeMovement != Target)
+                continue;
+
+            Vector3 triggerPos = Vector3.zero;
+            Quaternion triggerRot = Quaternion.identity;
+
+            Transform cubeTransform = Target.transform.FindChild("Cube");
+
+            // draw start nodes
+            triggerPos = edgeTrigger.transform.position;
+            triggerRot = edgeTrigger.transform.rotation;
+            size = HandleUtility.GetHandleSize(triggerPos) * 0.5f;
+
+            //do not draw node header if too far away
+            if (size < 3f)
+            {
+                //begin 2D GUI block
+                Handles.BeginGUI();
+                //translate waypoint vector3 position in world space into a position on the screen
+                var guiPoint = HandleUtility.WorldToGUIPoint(triggerPos);
+                //create rectangle with that positions and do some offset
+                var rect = new Rect(guiPoint.x - 50.0f, guiPoint.y - 40, 120, 20);
+                //draw box at position with current waypoint name
+                GUI.Box(rect, edgeTrigger.name);
+                Handles.EndGUI(); //end GUI block
+            }
+
+            //draw handles for the node, clamp size
+            Handles.color = Color.red + Color.green * 0.4f;
+            size = Mathf.Clamp(size, 0, 1.2f);
+            newPos = Handles.FreeMoveHandle(triggerPos, triggerRot,
+                size, Vector3.zero, Handles.SphereCap);
+            Handles.RadiusHandle(Quaternion.identity, triggerPos, size / 2);
+
+            if (triggerPos != newPos)
+            {
+                Undo.RecordObject(edgeTrigger.transform, "Move Handles");
+                edgeTrigger.transform.position = newPos;
+            }
+        }
+
+        NavGraphEdgeTrigger[] edgesTriggers_end = Target.EndNode.gameObject.GetComponentsInChildren<NavGraphEdgeTrigger>();
+        foreach (NavGraphEdgeTrigger edgeTrigger in edgesTriggers_end)
+        {
+            if (edgeTrigger.EdgeMovement != Target)
+                continue;
+
+            Vector3 triggerPos = Vector3.zero;
+            Quaternion triggerRot = Quaternion.identity;
+
+            Transform cubeTransform = Target.transform.FindChild("Cube");
+
+            // draw start nodes
+            triggerPos = edgeTrigger.transform.position;
+            triggerRot = edgeTrigger.transform.rotation;
+            size = HandleUtility.GetHandleSize(triggerPos) * 0.5f;
+
+            //do not draw node header if too far away
+            if (size < 3f)
+            {
+                //begin 2D GUI block
+                Handles.BeginGUI();
+                //translate waypoint vector3 position in world space into a position on the screen
+                var guiPoint = HandleUtility.WorldToGUIPoint(triggerPos);
+                //create rectangle with that positions and do some offset
+                var rect = new Rect(guiPoint.x - 50.0f, guiPoint.y - 40, 120, 20);
+                //draw box at position with current waypoint name
+                GUI.Box(rect, edgeTrigger.name);
+                Handles.EndGUI(); //end GUI block
+            }
+
+            //draw handles for the node, clamp size
+            Handles.color = Color.red + Color.green * 0.4f;
+            size = Mathf.Clamp(size, 0, 1.2f);
+            newPos = Handles.FreeMoveHandle(triggerPos, triggerRot,
+                size, Vector3.zero, Handles.SphereCap);
+            Handles.RadiusHandle(Quaternion.identity, triggerPos, size / 2);
+
+            if (triggerPos != newPos)
+            {
+                Undo.RecordObject(edgeTrigger.transform, "Move Handles");
+                edgeTrigger.transform.position = newPos;
+            }
+        }
     }
 
     NavGraphEdgeMovement Target { get { return target as NavGraphEdgeMovement; } }

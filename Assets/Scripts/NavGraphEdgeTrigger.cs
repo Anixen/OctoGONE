@@ -54,6 +54,24 @@ public class NavGraphEdgeTrigger : MonoBehaviour
         }
     }
 
+    void OnDrawGizmos()
+    {
+        Transform cubeTransform = transform.FindChild("Cube");
+
+        Gizmos.color = Color.red + Color.green * 0.4f;
+        Gizmos.DrawWireCube(cubeTransform.position, new Vector3(1, 1, 1) * 0.7f * GetHandleSize(transform.position));
+    }
+
+    public virtual float GetHandleSize(Vector3 pos)
+    {
+        float handleSize = 1f;
+        #if UNITY_EDITOR
+        handleSize = UnityEditor.HandleUtility.GetHandleSize(pos) * 0.4f;
+        handleSize = Mathf.Clamp(handleSize, 0, 1.2f);
+        #endif
+        return handleSize;
+    }
+
     public void SetGazedAt(bool gazedAt)
     {
         Transform cube = transform.FindChild("Cube");
