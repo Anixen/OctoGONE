@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
 using SWS;
+using UnityEditor;
 using UnityEngine.Events;
 
 public class NavGraphEdgeMovement : MonoBehaviour {
 
     // Reference to path
     public PathManager PathContainer;
+    public NavGraphEdgeTrigger startTrigger, endTrigger;
 
     public NavGraphNode StartNode;
     public NavGraphNode EndNode;
     public DG.Tweening.PathType movementType;
+
+    public GameObject EdgeTrigger; // Prefab
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        WaypointManager.DrawCurved(PathContainer.GetPathPoints());
+    }
+
 
     // Trigger movement function here
     public void StartMovement(splineMove mover, bool reverseMovement)
@@ -67,20 +78,13 @@ public class NavGraphEdgeMovement : MonoBehaviour {
         Debug.Log("Finished Movement (Reverse)");
     }
 
-    public void updateSpline()
-    {
-        Debug.Log("Update spline of " + name);
-        PathContainer.gameObject.transform.GetChild(0).transform.position = StartNode.transform.position;
-        PathContainer.gameObject.transform.GetChild(PathContainer.waypoints.Length - 1).transform.position = EndNode.transform.position;
-    } 
-
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
+    }
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Update is called once per frame
+    void Update()
+    {
+    }
 }

@@ -11,9 +11,9 @@ public class NavGraphManagerEditor : Editor {
         DrawDefaultInspector();
 
         if (GUILayout.Button("Update Splines")) {
-            Debug.Log("Updating splines");
+            Debug.Log("NavGraphManagerditor : Updating splines");
                 
-            Target.UpdateSplines();
+            NavGraphBuilder.UpdateSplines(Target);
         }
         GUILayout.EndVertical();
     }

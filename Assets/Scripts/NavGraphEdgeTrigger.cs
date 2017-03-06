@@ -2,6 +2,7 @@
 using System.Collections;
 
 using SWS;
+using UnityEditor;
 using UnityEngine.EventSystems;
 
 //[RequireComponent(typeof(Collider))]
@@ -14,6 +15,9 @@ public class NavGraphEdgeTrigger : MonoBehaviour
 
     public Material InactiveMaterial;
     public Material GazedAtMaterial;
+
+    public bool OverridePlacement = false; // Set this to true if you don t want your trigger position to be changed by the NavGraphBuilder 
+    public float DistanceToNode = 3.0f;
 
     //private float rotationSpeed;
 
@@ -53,6 +57,21 @@ public class NavGraphEdgeTrigger : MonoBehaviour
             Application.Quit();
         }
     }
+
+    void OnDrawGizmos()
+    {
+        float handleSize = 1f;
+        #if UNITY_EDITOR
+        handleSize = UnityEditor.HandleUtility.GetHandleSize(transform.position) * 0.4f;
+        handleSize = Mathf.Clamp(handleSize, 0, 1.2f);
+        #endif
+
+        Transform cubeTransform = transform.FindChild("Cube");
+
+        Handles.color = Color.white;
+        Gizmos.DrawWireCube(cubeTransform.position, new Vector3(1, 1, 1) * 0.7f * handleSize);
+    }
+
 
     public void SetGazedAt(bool gazedAt)
     {
