@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-public class HandleDisplay {
+public class HandleDisplayer {
 
     public static void DrawHandle(NavGraphNode target)
     {
@@ -33,6 +33,7 @@ public class HandleDisplay {
         {
             Undo.RecordObject(target.transform, "Move Handles");
             target.transform.position = newPos;
+            NavGraphBuilder.UpdateSplines(target.transform.parent.gameObject.GetComponent<NavGraphManager>());
         }
     }
 
