@@ -21,6 +21,9 @@ public class NavGraphEdgeMovement : MonoBehaviour {
 
     void OnDrawGizmos()
     {
+        if(PathContainer == null || PathContainer.GetPathPoints().Length < 2)
+            return;
+
         Gizmos.color = Color.yellow;
         WaypointManager.DrawCurved(PathContainer.GetPathPoints());
     }
