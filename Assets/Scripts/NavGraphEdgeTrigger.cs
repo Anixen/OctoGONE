@@ -2,6 +2,7 @@
 using System.Collections;
 
 using SWS;
+using UnityEditor;
 using UnityEngine.EventSystems;
 
 //[RequireComponent(typeof(Collider))]
@@ -70,6 +71,47 @@ public class NavGraphEdgeTrigger : MonoBehaviour
         handleSize = Mathf.Clamp(handleSize, 0, 1.2f);
         #endif
         return handleSize;
+    }
+
+    public virtual void DrawHandle()
+    {
+        Vector3 triggerPos = transform.position;
+        Quaternion triggerRot = transform.rotation;
+        Vector3 newPos = Vector3.zero;
+        float size = HandleUtility.GetHandleSize(triggerPos) * 0.5f;
+
+        Transform cubeTransform = transform.FindChild("Cube");
+
+        //do not draw trigger header if too far away
+        if (size < 3f)
+        {
+            //begin 2D GUI block
+            Handles.BeginGUI();
+            //translate waypoint vector3 position in world space into a position on the screen
+            var guiPoint = HandleUtility.WorldToGUIPoint(triggerPos);
+            //create rectangle with that positions and do some offset
+            var rect = new Rect(guiPoint.x - 50.0f, guiPoint.y - 40, 120, 20);
+            //draw box at position with current waypoint name
+            GUI.Box(rect, transform.name);
+            Handles.EndGUI(); //end GUI block
+        }
+
+        //draw handles for the node, clamp size
+        if (ReverseMovement)
+            Handles.color = Color.cyan;
+        else
+            Handles.color = Color.red + Color.green * 0.4f;
+
+        size = Mathf.Clamp(size, 0, 1.2f);
+        newPos = Handles.FreeMoveHandle(triggerPos, triggerRot,
+            size, Vector3.zero, Handles.SphereCap);
+        Handles.RadiusHandle(Quaternion.identity, triggerPos, size / 2);
+
+        if (triggerPos != newPos)
+        {
+            Undo.RecordObject(transform, "Move Handles");
+            transform.position = newPos;
+        }
     }
 
     public void SetGazedAt(bool gazedAt)
