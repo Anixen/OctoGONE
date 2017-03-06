@@ -9,13 +9,13 @@ public class NavGraphNodeEditor : Editor {
     // also display a handle
     void OnSceneGUI()
     {
-       Target.DrawHandle();
+        HandleDisplay.DrawHandle(Target);
 
         // Draw asociated triggers
         NavGraphEdgeTrigger[] edgesTriggers = Target.gameObject.GetComponentsInChildren<NavGraphEdgeTrigger>();
         foreach (NavGraphEdgeTrigger edgeTrigger in edgesTriggers)
         {
-            edgeTrigger.DrawHandle();
+            HandleDisplay.DrawHandle(edgeTrigger);
         }
     }
 

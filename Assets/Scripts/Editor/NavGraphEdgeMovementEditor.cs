@@ -9,11 +9,11 @@ public class NavGraphEdgeMovementEditor : Editor {
     void OnSceneGUI()
     {
         // Display intermediate waypoints handles
-        Target.DrawHandles();
+        HandleDisplay.DrawHandles(Target);
 
         // Display start and end nodes handles
-        Target.StartNode.DrawHandle();
-        Target.EndNode.DrawHandle();
+        HandleDisplay.DrawHandle(Target.StartNode);
+        HandleDisplay.DrawHandle(Target.EndNode);
 
         // Draw triggers associated with start and end nodes that will activate this edge
         NavGraphEdgeTrigger[] edgesTriggers_start = Target.StartNode.gameObject.GetComponentsInChildren<NavGraphEdgeTrigger>();
@@ -22,7 +22,7 @@ public class NavGraphEdgeMovementEditor : Editor {
             if(edgeTrigger.EdgeMovement != Target)
                 continue;
 
-            edgeTrigger.DrawHandle();
+            HandleDisplay.DrawHandle(edgeTrigger);
         }
 
         NavGraphEdgeTrigger[] edgesTriggers_end = Target.EndNode.gameObject.GetComponentsInChildren<NavGraphEdgeTrigger>();
@@ -31,7 +31,7 @@ public class NavGraphEdgeMovementEditor : Editor {
             if (edgeTrigger.EdgeMovement != Target)
                 continue;
 
-            edgeTrigger.DrawHandle();
+            HandleDisplay.DrawHandle(edgeTrigger);
         }
     }
 

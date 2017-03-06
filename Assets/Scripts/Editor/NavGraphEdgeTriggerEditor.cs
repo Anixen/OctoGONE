@@ -10,12 +10,12 @@ public class NavGraphEdgeTriggerEditor : Editor
 
     void OnSceneGUI()
     {
-        Target.DrawHandle();
+        HandleDisplay.DrawHandle(Target);
 
         // Draw associated edge
-        Target.EdgeMovement.DrawHandles();
-        Target.EdgeMovement.StartNode.DrawHandle();
-        Target.EdgeMovement.EndNode.DrawHandle();
+        HandleDisplay.DrawHandles(Target.EdgeMovement);
+        HandleDisplay.DrawHandle(Target.EdgeMovement.StartNode);
+        HandleDisplay.DrawHandle(Target.EdgeMovement.EndNode);
     }
 
     NavGraphEdgeTrigger Target { get { return target as NavGraphEdgeTrigger; } }
