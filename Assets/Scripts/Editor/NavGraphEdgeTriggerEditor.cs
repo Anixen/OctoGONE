@@ -37,7 +37,11 @@ public class NavGraphEdgeTriggerEditor : Editor
         }
 
         //draw handles for the node, clamp size
-        Handles.color = Color.red + Color.green * 0.4f;
+        if (Target.ReverseMovement)
+            Handles.color = Color.cyan;
+        else
+            Handles.color = Color.red + Color.green * 0.4f;
+
         size = Mathf.Clamp(size, 0, 1.2f);
         newPos = Handles.FreeMoveHandle(triggerPos, triggerRot,
             size, Vector3.zero, Handles.SphereCap);
