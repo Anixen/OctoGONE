@@ -78,20 +78,13 @@ public class NavGraphEdgeMovement : MonoBehaviour {
         Debug.Log("Finished Movement (Reverse)");
     }
 
-    public void updateSpline()
-    {
-        Debug.Log("Update spline of " + name);
-        PathContainer.gameObject.transform.GetChild(0).transform.position = StartNode.transform.position;
-        PathContainer.gameObject.transform.GetChild(PathContainer.waypoints.Length - 1).transform.position = EndNode.transform.position;
-    } 
-
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
+    }
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Update is called once per frame
+    void Update()
+    {
+    }
 }
