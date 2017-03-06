@@ -6,8 +6,12 @@ using UnityEngine.Events;
 public class NavGraphEdgeMovement : MonoBehaviour {
 
     // Reference to path
+    [SerializeField]
     public PathManager PathContainer;
-    public NavGraphEdgeTrigger startTrigger, endTrigger;
+    [SerializeField]
+    public NavGraphEdgeTrigger startTrigger;
+    [SerializeField]
+    public NavGraphEdgeTrigger endTrigger;
 
     public NavGraphNode StartNode;
     public NavGraphNode EndNode;

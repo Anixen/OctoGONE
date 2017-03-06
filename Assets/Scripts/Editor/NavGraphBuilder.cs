@@ -12,6 +12,8 @@ public class NavGraphBuilder : MonoBehaviour {
             target.StartNode.transform.position;
         target.PathContainer.gameObject.transform.GetChild(target.PathContainer.waypoints.Length - 1).transform.position =
             target.EndNode.transform.position;
+
+        EditorUtility.SetDirty(target);
     }
 
     public static void UpdateTriggers(NavGraphEdgeMovement target)
@@ -73,6 +75,8 @@ public class NavGraphBuilder : MonoBehaviour {
             float distance = target.endTrigger.DistanceToNode;
             target.endTrigger.transform.position = target.EndNode.transform.position + endTangent * distance;
         }
+
+        EditorUtility.SetDirty(target);
     }
 
     public static void UpdateSplines(NavGraphManager target)
