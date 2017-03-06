@@ -58,7 +58,7 @@ public class NavGraphEdgeTrigger : MonoBehaviour
     {
         Transform cubeTransform = transform.FindChild("Cube");
 
-        Gizmos.color = Color.red + Color.green * 0.4f;
+        Handles.color = Color.white;
         Gizmos.DrawWireCube(cubeTransform.position, new Vector3(1, 1, 1) * 0.7f * GetHandleSize(transform.position));
     }
 
