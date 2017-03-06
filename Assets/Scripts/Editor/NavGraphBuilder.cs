@@ -60,16 +60,18 @@ public class NavGraphBuilder : MonoBehaviour {
         // Set the start and end triggers
         Vector3[] pathPoints = WaypointManager.GetCurved(target.PathContainer.GetPathPoints());
 
-        if (target.startTrigger != null)
+        if (target.startTrigger != null && !target.startTrigger.OverridePlacement)
         {
             Vector3 startTangent = (pathPoints[2] - pathPoints[1]).normalized;
-            target.startTrigger.transform.position = target.StartNode.transform.position + 2.0f * startTangent;
+            float distance = target.startTrigger.DistanceToNode;
+            target.startTrigger.transform.position = target.StartNode.transform.position + startTangent * distance;
         }
 
-        if (target.endTrigger != null)
+        if (target.endTrigger != null && !target.endTrigger.OverridePlacement)
         {
             Vector3 endTangent = (pathPoints[pathPoints.Length - 3] - pathPoints[pathPoints.Length - 2]).normalized;
-            target.endTrigger.transform.position = target.EndNode.transform.position + 2.0f * endTangent;
+            float distance = target.endTrigger.DistanceToNode;
+            target.endTrigger.transform.position = target.EndNode.transform.position + endTangent * distance;
         }
     }
 

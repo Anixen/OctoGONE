@@ -16,6 +16,9 @@ public class NavGraphEdgeTrigger : MonoBehaviour
     public Material InactiveMaterial;
     public Material GazedAtMaterial;
 
+    public bool OverridePlacement = false; // Set this to true if you don t want your trigger position to be changed by the NavGraphBuilder 
+    public float DistanceToNode = 3.0f;
+
     //private float rotationSpeed;
 
     void Awake()

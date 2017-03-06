@@ -150,3 +150,5 @@ MonoBehaviour:
   Enabled: 1
   InactiveMaterial: {fileID: 2100000, guid: 0edec395166a3244592f3532c7ce794c, type: 2}
   GazedAtMaterial: {fileID: 2100000, guid: daad62324deb0cf448e5c805c8459bff, type: 2}
+  OverridePlacement: 0
+  DistanceToNode: 2
