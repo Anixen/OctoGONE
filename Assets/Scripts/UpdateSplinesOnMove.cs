@@ -12,10 +12,12 @@ public class UpdateSplinesOnMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        /*
         if (transform.hasChanged)
         {
             transform.parent.GetComponent<NavGraphManager>().UpdateSplines();
             transform.hasChanged = false;
         }
+        //*/
     }
 }
