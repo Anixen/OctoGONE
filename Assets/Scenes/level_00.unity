@@ -614,6 +614,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 40a353f6117398145a3e785d9854de93, type: 2}
+    - target: {fileID: 114000013301036988, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9,
+        type: 2}
+      propertyPath: destinationScene
+      value: level_01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9, type: 2}
   m_IsPrefabParent: 0
@@ -668,6 +673,12 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 198490, guid: 5ca80f4596fa44b87912a0592346d260, type: 2}
   m_PrefabInternal: {fileID: 517217889}
+--- !u!114 &529007104 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000012731812974, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9,
+    type: 2}
+  m_PrefabInternal: {fileID: 432929687}
+  m_Script: {fileID: 11500000, guid: 6c63ef2a17e298840a88f0773a3c26c1, type: 3}
 --- !u!1 &546816349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1825,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1798832703}
     m_Modifications:
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011365248310, guid: 608327214952ad44595f3977f9a61add, type: 2}
       propertyPath: m_LocalPosition.x
       value: -24.28
@@ -1850,6 +1866,11 @@ Prefab:
       propertyPath: m_Name
       value: Node_000
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 529007104}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 608327214952ad44595f3977f9a61add, type: 2}
   m_IsPrefabParent: 0
@@ -3070,6 +3091,16 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 40a353f6117398145a3e785d9854de93, type: 2}
+    - target: {fileID: 64000010790813024, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013301036988, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9,
+        type: 2}
+      propertyPath: destinationScene
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9, type: 2}
   m_IsPrefabParent: 0
