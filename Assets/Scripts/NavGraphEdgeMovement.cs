@@ -6,8 +6,12 @@ using UnityEngine.Events;
 public class NavGraphEdgeMovement : MonoBehaviour {
 
     // Reference to path
+    [SerializeField]
     public PathManager PathContainer;
-    public NavGraphEdgeTrigger startTrigger, endTrigger;
+    [SerializeField]
+    public NavGraphEdgeTrigger startTrigger;
+    [SerializeField]
+    public NavGraphEdgeTrigger endTrigger;
 
     public NavGraphNode StartNode;
     public NavGraphNode EndNode;
@@ -17,6 +21,9 @@ public class NavGraphEdgeMovement : MonoBehaviour {
 
     void OnDrawGizmos()
     {
+        if(PathContainer == null || PathContainer.GetPathPoints().Length < 2)
+            return;
+
         Gizmos.color = Color.yellow;
         WaypointManager.DrawCurved(PathContainer.GetPathPoints());
     }
