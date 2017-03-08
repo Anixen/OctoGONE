@@ -46,6 +46,10 @@ public class Trigger : MonoBehaviour
 
     public void Enable()
     {
+        //Debug.Log("Enable : " + name + ", locked = " + locked);
+        if(locked)
+            return;
+
         collider.enabled = true;
     }
 
@@ -56,6 +60,7 @@ public class Trigger : MonoBehaviour
 
     public void Lock()
     {
+        Disable();
         locked = true;
     }
 
