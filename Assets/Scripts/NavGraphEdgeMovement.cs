@@ -25,7 +25,15 @@ public class NavGraphEdgeMovement : MonoBehaviour {
             return;
 
         Gizmos.color = Color.yellow;
-        WaypointManager.DrawCurved(PathContainer.GetPathPoints());
+        switch (movementType)
+        {
+            case DG.Tweening.PathType.Linear:
+                WaypointManager.DrawStraight(PathContainer.GetPathPoints());
+                break;
+            default:
+                WaypointManager.DrawCurved(PathContainer.GetPathPoints());
+                break;
+        }   
     }
 
 

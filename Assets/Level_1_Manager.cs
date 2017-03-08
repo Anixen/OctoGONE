@@ -41,10 +41,10 @@ public class Level_1_Manager : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	    UpdateLevelState();
+	    //UpdateLevelState();
 	}
 
-    void UpdateLevelState()
+    public void UpdateLevelState()
     {
         if (!exitOpened
             && (flame_000.active && flame_011.active))
