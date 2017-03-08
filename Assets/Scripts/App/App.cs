@@ -3,6 +3,7 @@ using System.Collections;
 
 public class App : MonoBehaviour
 {
+    private string StartingLevel = "level_00";
     private LevelManager levelManager;
     // TODO SaveManager
     // TODO GameManager
@@ -15,7 +16,7 @@ public class App : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    levelManager.Load("level_01");
+	    levelManager.Load(StartingLevel);
 	}
 	
 	// Update is called once per frame
