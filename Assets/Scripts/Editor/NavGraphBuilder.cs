@@ -116,19 +116,45 @@ public class NavGraphBuilder : MonoBehaviour {
         // Set the start and end triggers
         Vector3[] pathPoints = WaypointManager.GetCurved(target.PathContainer.GetPathPoints());
 
-        if (target.startTrigger != null && !target.startTrigger.OverridePlacement)
+        switch (target.movementType)
         {
-            Vector3 startTangent = (pathPoints[2] - pathPoints[1]).normalized;
-            float distance = target.startTrigger.DistanceToNode;
-            target.startTrigger.transform.position = target.StartNode.transform.position + startTangent * distance;
+            case DG.Tweening.PathType.Linear:
+                pathPoints = target.PathContainer.GetPathPoints();
+
+                if (target.startTrigger != null && !target.startTrigger.OverridePlacement)
+                {
+                    Vector3 startTangent = (pathPoints[1] - pathPoints[0]).normalized;
+                    float distance = target.startTrigger.DistanceToNode;
+                    target.startTrigger.transform.position = target.StartNode.transform.position + startTangent * distance;
+                }
+
+                if (target.endTrigger != null && !target.endTrigger.OverridePlacement)
+                {
+                    Vector3 endTangent = (pathPoints[pathPoints.Length - 2] - pathPoints[pathPoints.Length - 1]).normalized;
+                    float distance = target.endTrigger.DistanceToNode;
+                    target.endTrigger.transform.position = target.EndNode.transform.position + endTangent * distance;
+                }
+                break;
+            default:
+                pathPoints = WaypointManager.GetCurved(target.PathContainer.GetPathPoints());
+
+                if (target.startTrigger != null && !target.startTrigger.OverridePlacement)
+                {
+                    Vector3 startTangent = (pathPoints[2] - pathPoints[1]).normalized;
+                    float distance = target.startTrigger.DistanceToNode;
+                    target.startTrigger.transform.position = target.StartNode.transform.position + startTangent * distance;
+                }
+
+                if (target.endTrigger != null && !target.endTrigger.OverridePlacement)
+                {
+                    Vector3 endTangent = (pathPoints[pathPoints.Length - 3] - pathPoints[pathPoints.Length - 2]).normalized;
+                    float distance = target.endTrigger.DistanceToNode;
+                    target.endTrigger.transform.position = target.EndNode.transform.position + endTangent * distance;
+                }
+                break;
         }
 
-        if (target.endTrigger != null && !target.endTrigger.OverridePlacement)
-        {
-            Vector3 endTangent = (pathPoints[pathPoints.Length - 3] - pathPoints[pathPoints.Length - 2]).normalized;
-            float distance = target.endTrigger.DistanceToNode;
-            target.endTrigger.transform.position = target.EndNode.transform.position + endTangent * distance;
-        }
+        
 
         EditorUtility.SetDirty(target);
     }
