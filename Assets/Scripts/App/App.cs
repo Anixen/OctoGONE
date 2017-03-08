@@ -15,7 +15,7 @@ public class App : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	    levelManager.Load("level_00");
+	    levelManager.Load("level_01");
 	}
 	
 	// Update is called once per frame

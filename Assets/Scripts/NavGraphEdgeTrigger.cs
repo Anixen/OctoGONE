@@ -104,7 +104,7 @@ public class NavGraphEdgeTrigger : MonoBehaviour
         Enabled = true;
 
         // If the parent node is currently the active one, reveal the trigger
-        if (NavGraphManager.instance.ActiveNode == transform.parent)
+        if (NavGraphManager.instance.ActiveNode.gameObject == transform.parent.gameObject)
             UnHide();
     }
 

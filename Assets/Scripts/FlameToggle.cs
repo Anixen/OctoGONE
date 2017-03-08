@@ -3,6 +3,11 @@ using System.Collections;
 
 public class FlameToggle : MonoBehaviour
 {
+    public bool active
+    {
+        get { return gameObject.activeInHierarchy; }
+    }
+
 	// Use this for initialization
 	void Start () {
 	
