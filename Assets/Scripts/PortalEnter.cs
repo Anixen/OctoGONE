@@ -22,10 +22,11 @@ public class PortalEnter : MonoBehaviour
 	
 	}
 
-    public void ActivatePortal()
+    public void EnterPortal()
     {
-        Debug.Log("Activated portal : " + name);
+        Debug.Log("Entering portal : " + transform.parent.name);
 
-        levelManager.Load(destinationScene);
+        if(levelManager != null)
+            levelManager.Load(destinationScene);
     }
 }
