@@ -53,6 +53,8 @@ public class Level_1_Manager : MonoBehaviour
 
             edge_006.startTrigger.Enable();
             edge_006.endTrigger.Enable();
+
+            exitOpened = true;
         }
 
         if (exitOpened
@@ -62,6 +64,8 @@ public class Level_1_Manager : MonoBehaviour
 
             edge_006.startTrigger.Disable();
             edge_006.endTrigger.Disable();
+
+            exitOpened = false;
         }
     }
 }
