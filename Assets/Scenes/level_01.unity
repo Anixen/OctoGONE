@@ -5566,7 +5566,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1775254129}
-        m_MethodName: ActivatePortal
+        m_MethodName: EnterPortal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -9,7 +9,7 @@ public class Level_1_Manager : MonoBehaviour
     private FlameToggle flame_000;
     private FlameToggle flame_011;
     private NavGraphEdgeMovement edge_006;
-    private PortalActivate exit;
+    private PortalEnter exit;
 
     private bool exitOpened = false;
 
@@ -24,7 +24,7 @@ public class Level_1_Manager : MonoBehaviour
 
         edge_006 = GameObject.Find("Edge_006").GetComponent<NavGraphEdgeMovement>();
 
-        exit = GameObject.Find("exit").GetComponent<PortalActivate>();
+        exit = GameObject.Find("exit").GetComponent<PortalEnter>();
     }
 
 	// Use this for initialization

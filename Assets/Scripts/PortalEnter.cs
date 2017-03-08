@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PortalActivate : MonoBehaviour
+public class PortalEnter : MonoBehaviour
 {
     public string destinationScene;
 
