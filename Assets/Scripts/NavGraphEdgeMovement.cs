@@ -46,7 +46,7 @@ public class NavGraphEdgeMovement : MonoBehaviour {
         mover.reverse = reverseMovement;
         mover.pathType = movementType;
 
-        // TODO Attach start and arrive events
+        // Attach start and arrive events
         mover.events.Clear();
         for(int i = 0; i < PathContainer.GetEventsCount(); ++i)
             mover.events.Add(new UnityEvent());
@@ -54,7 +54,7 @@ public class NavGraphEdgeMovement : MonoBehaviour {
         if (reverseMovement)
         {
             mover.events[0].AddListener(PingEnd_Reverse);
-            mover.events[PathContainer.GetEventsCount() - 1].AddListener(PingStart_Reverse);
+            mover.events[PathContainer.GetEventsCount() - 1].AddListener(PingStart);
         }
         else
         {
@@ -69,7 +69,7 @@ public class NavGraphEdgeMovement : MonoBehaviour {
     {
         Debug.Log("Started Movement");
 
-        StartNode.LeavingNodeEvent.Invoke();
+        NavGraphManager.instance.ActiveNode.LeavingNodeEvent.Invoke();
     }
 
     void PingEnd()
@@ -77,13 +77,6 @@ public class NavGraphEdgeMovement : MonoBehaviour {
         EndNode.EnteringNodeEvent.Invoke();
 
         Debug.Log("Finished Movement");
-    }
-
-    void PingStart_Reverse()
-    {
-        Debug.Log("Started Movement (Reverse)");
-
-        EndNode.LeavingNodeEvent.Invoke();
     }
 
     void PingEnd_Reverse()
