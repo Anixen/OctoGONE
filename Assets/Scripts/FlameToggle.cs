@@ -3,6 +3,11 @@ using System.Collections;
 
 public class FlameToggle : MonoBehaviour
 {
+    public bool active
+    {
+        get { return gameObject.activeSelf; }
+    }
+
 	// Use this for initialization
 	void Start () {
 	
@@ -16,5 +21,6 @@ public class FlameToggle : MonoBehaviour
     public void Toggle()
     {
         gameObject.SetActive(!gameObject.activeSelf);
+        Level_1_Manager.instance.UpdateLevelState();
     }
 }

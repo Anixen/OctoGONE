@@ -19,10 +19,14 @@ public class NavGraphEdgeTrigger : MonoBehaviour
     public bool OverridePlacement = false; // Set this to true if you don t want your trigger position to be changed by the NavGraphBuilder 
     public float DistanceToNode = 3.0f;
 
+    private GameObject cube; // Reference to the cube used for user interaction
+
     //private float rotationSpeed;
 
     void Awake()
     {
+        cube = transform.FindChild("Cube").gameObject;
+
         EventTrigger eventTrigger = transform.GetChild(0).GetComponent<EventTrigger>();
         if (eventTrigger != null)
         {
@@ -66,16 +70,14 @@ public class NavGraphEdgeTrigger : MonoBehaviour
         handleSize = Mathf.Clamp(handleSize, 0, 1.2f);
         #endif
 
-        Transform cubeTransform = transform.FindChild("Cube");
-
         Handles.color = Color.white;
-        Gizmos.DrawWireCube(cubeTransform.position, new Vector3(1, 1, 1) * 0.7f * handleSize);
+        Transform cube = transform.FindChild("Cube");
+        Gizmos.DrawWireCube(cube.position, new Vector3(1, 1, 1) * 0.7f * handleSize);
     }
 
 
     public void SetGazedAt(bool gazedAt)
     {
-        Transform cube = transform.FindChild("Cube");
         if (InactiveMaterial != null && GazedAtMaterial != null)
         {
             cube.GetComponent<Renderer>().material = gazedAt ? GazedAtMaterial : InactiveMaterial;
@@ -87,15 +89,14 @@ public class NavGraphEdgeTrigger : MonoBehaviour
     public void Hide()
     {
         SetGazedAt(false);
-        gameObject.SetActive(false);
+        cube.SetActive(false);
     }
 
     public void UnHide()
     {
-        if(!Enabled)
+        if (!Enabled)
             return;
-
-        gameObject.SetActive(true);
+        cube.SetActive(true);
         SetGazedAt(false);
     }
 
@@ -104,8 +105,11 @@ public class NavGraphEdgeTrigger : MonoBehaviour
         Enabled = true;
 
         // If the parent node is currently the active one, reveal the trigger
-        if (NavGraphManager.instance.ActiveNode == transform.parent)
+        if (NavGraphManager.instance.ActiveNode.gameObject == transform.parent.gameObject)
+        {
             UnHide();
+        }
+            
     }
 
     public void Disable()
