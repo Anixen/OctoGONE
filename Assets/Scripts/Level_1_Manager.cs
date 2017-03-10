@@ -9,9 +9,9 @@ public class Level_1_Manager : MonoBehaviour
     private FlameToggle flame_000;
     private FlameToggle flame_011;
     private NavGraphEdgeMovement edge_006;
-    private PortalActivate exit;
+    private PortalEnter exit;
 
-    private bool exitOpened = false;
+    private bool exitOpened {get { return exit.gameObject.activeSelf; } }
 
     void Awake()
     {
@@ -24,25 +24,26 @@ public class Level_1_Manager : MonoBehaviour
 
         edge_006 = GameObject.Find("Edge_006").GetComponent<NavGraphEdgeMovement>();
 
-        exit = GameObject.Find("exit").GetComponent<PortalActivate>();
+        exit = GameObject.Find("exit").GetComponent<PortalEnter>();
     }
 
-	// Use this for initialization
-	void Start ()
-	{
+    // Use this for initialization
+    void Start()
+    {
         exit.gameObject.SetActive(false);
 
-	    edge_006.startTrigger.Disable();
-	    edge_006.endTrigger.Disable();
+        edge_006.startTrigger.Disable();
+        edge_006.endTrigger.Disable();
 
         flame_000.gameObject.SetActive(false);
         flame_011.gameObject.SetActive(false);
     }
-	
-	// Update is called once per frame
-	void Update () {
-	    //UpdateLevelState();
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        //UpdateLevelState();
+    }
 
     public void UpdateLevelState()
     {
@@ -53,8 +54,6 @@ public class Level_1_Manager : MonoBehaviour
 
             edge_006.startTrigger.Enable();
             edge_006.endTrigger.Enable();
-
-            exitOpened = true;
         }
 
         if (exitOpened
@@ -64,8 +63,6 @@ public class Level_1_Manager : MonoBehaviour
 
             edge_006.startTrigger.Disable();
             edge_006.endTrigger.Disable();
-
-            exitOpened = false;
         }
     }
 }

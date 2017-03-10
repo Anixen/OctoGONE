@@ -46,11 +46,12 @@ public class NavGraphEdgeTrigger : MonoBehaviour
             pointerClick_entry.callback.AddListener(OnGazeTrigger);
             eventTrigger.triggers.Add(pointerClick_entry);
         }
+
+        Hide();
     }
 
     void Start()
     {
-        Hide();
     }
 
     void LateUpdate()
@@ -88,12 +89,14 @@ public class NavGraphEdgeTrigger : MonoBehaviour
 
     public void Hide()
     {
+        Debug.Log("Hide : " + name);
         SetGazedAt(false);
         cube.SetActive(false);
     }
 
     public void UnHide()
     {
+        Debug.Log("Unhide : " + name + ", Enabled = " + Enabled);
         if (!Enabled)
             return;
         cube.SetActive(true);
