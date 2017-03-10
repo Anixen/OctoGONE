@@ -2,7 +2,6 @@
 using System.Collections;
 
 using SWS;
-using UnityEditor;
 using UnityEngine.EventSystems;
 
 //[RequireComponent(typeof(Collider))]
@@ -71,7 +70,7 @@ public class NavGraphEdgeTrigger : MonoBehaviour
         handleSize = Mathf.Clamp(handleSize, 0, 1.2f);
         #endif
 
-        Handles.color = Color.white;
+        Gizmos.color = Color.white;
         Transform cube = transform.FindChild("Cube");
         Gizmos.DrawWireCube(cube.position, new Vector3(1, 1, 1) * 0.7f * handleSize);
     }

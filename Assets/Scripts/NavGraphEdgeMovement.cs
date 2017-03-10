@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using SWS;
-using UnityEditor;
 using UnityEngine.Events;
 
 public class NavGraphEdgeMovement : MonoBehaviour {
