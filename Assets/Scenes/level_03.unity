@@ -3402,6 +3402,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 714998593}
     m_Modifications:
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011365248310, guid: 608327214952ad44595f3977f9a61add, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -3438,6 +3443,11 @@ Prefab:
       propertyPath: m_Name
       value: Node_005
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 2085655227}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 608327214952ad44595f3977f9a61add, type: 2}
   m_IsPrefabParent: 0
@@ -6370,6 +6380,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 714998593}
     m_Modifications:
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011365248310, guid: 608327214952ad44595f3977f9a61add, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6406,6 +6421,11 @@ Prefab:
       propertyPath: m_Name
       value: Node_006
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 2085655227}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 608327214952ad44595f3977f9a61add, type: 2}
   m_IsPrefabParent: 0
@@ -6772,6 +6792,92 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 714076af8d287ce499dac3593b9b11d9, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &2085655226 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 714076af8d287ce499dac3593b9b11d9, type: 3}
+  m_PrefabInternal: {fileID: 2085655225}
+--- !u!114 &2085655227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2085655226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c63ef2a17e298840a88f0773a3c26c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locked: 0
+  repeatable: 1
+  Triggerables:
+  - {fileID: 2085655228}
+--- !u!114 &2085655228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2085655226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0b34d732a395b48b51850dcfe46aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locked: 0
+  repeatable: 1
+  TriggeredEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2085655229}
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &2085655229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2085655226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7a9693c1c86d249ab8aa8afc80f5a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NodeDown: {fileID: 0}
+  NodeUp: {fileID: 0}
+--- !u!114 &2085655230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2085655226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
+--- !u!64 &2085655231
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2085655226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 714076af8d287ce499dac3593b9b11d9, type: 3}
 --- !u!114 &2090515549 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000010896437884, guid: 8db979804ef498d488689b7f2b261e64,
