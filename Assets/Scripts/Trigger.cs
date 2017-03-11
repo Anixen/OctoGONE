@@ -46,6 +46,9 @@ public class Trigger : MonoBehaviour
 
     public void Enable()
     {
+        if(locked)
+            return;
+
         collider.enabled = true;
     }
 
@@ -56,6 +59,7 @@ public class Trigger : MonoBehaviour
 
     public void Lock()
     {
+        Disable();
         locked = true;
     }
 
