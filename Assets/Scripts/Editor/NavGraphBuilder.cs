@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using SWS;
 using UnityEditor;
 
@@ -53,6 +54,11 @@ public class NavGraphBuilder : MonoBehaviour {
             }
             target.PathContainer.name = "Path_" + edgeNumber;
         }
+
+        if (target.movementType == PathType.Linear)
+            target.PathContainer.drawCurved = false;
+        else
+            target.PathContainer.drawCurved = true;
 
         target.PathContainer.gameObject.transform
         .FindChild(target.PathContainer.waypoints[0].name).transform.position = 
