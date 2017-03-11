@@ -6874,7 +6874,7 @@ MeshCollider:
   m_GameObject: {fileID: 2085655226}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 714076af8d287ce499dac3593b9b11d9, type: 3}
