@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PortalActivate : MonoBehaviour
+public class PortalEnter : MonoBehaviour
 {
     public string destinationScene;
 
@@ -22,10 +22,11 @@ public class PortalActivate : MonoBehaviour
 	
 	}
 
-    public void ActivatePortal()
+    public void EnterPortal()
     {
-        Debug.Log("Activated portal : " + name);
+        Debug.Log("Entering portal : " + transform.parent.name);
 
-        levelManager.Load(destinationScene);
+        if(levelManager != null)
+            levelManager.Load(destinationScene);
     }
 }

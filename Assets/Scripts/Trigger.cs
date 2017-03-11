@@ -16,6 +16,7 @@ public class Trigger : MonoBehaviour
     private Collider collider;
     private EventTrigger eventTrigger;
 
+    public bool enabled { get { return collider.enabled; } }
 
     void Awake()
     {
@@ -41,11 +42,11 @@ public class Trigger : MonoBehaviour
 
     public void Start()
     {
-        Disable();
     }
 
     public void Enable()
     {
+        //Debug.Log("Enable : " + name + ", locked = " + locked);
         if(locked)
             return;
 
