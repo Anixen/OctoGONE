@@ -672,6 +672,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011194199214, guid: cf4606c3825f04d468c92cd8921448ea,
     type: 2}
   m_PrefabInternal: {fileID: 226338861}
+--- !u!114 &238364376 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013104163746, guid: de83010c5658b2e4b84fbf10fe44df89,
+    type: 2}
+  m_PrefabInternal: {fileID: 334269821}
+  m_Script: {fileID: 11500000, guid: 6c63ef2a17e298840a88f0773a3c26c1, type: 3}
 --- !u!4 &256689911 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011194199214, guid: cf4606c3825f04d468c92cd8921448ea,
@@ -864,6 +870,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 716eac6c357b6f9448517d496b7b0583, type: 2}
+    - target: {fileID: 1000012062251526, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
+      propertyPath: m_Name
+      value: bouton_001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
   m_IsPrefabParent: 0
@@ -2983,6 +2993,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 981781991}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &994893087 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013104163746, guid: de83010c5658b2e4b84fbf10fe44df89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1459995514}
+  m_Script: {fileID: 11500000, guid: 6c63ef2a17e298840a88f0773a3c26c1, type: 3}
 --- !u!1 &998522571
 GameObject:
   m_ObjectHideFlags: 0
@@ -3796,6 +3812,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 716eac6c357b6f9448517d496b7b0583, type: 2}
+    - target: {fileID: 1000012062251526, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
+      propertyPath: m_Name
+      value: bouton_000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
   m_IsPrefabParent: 0
@@ -4660,6 +4680,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 716eac6c357b6f9448517d496b7b0583, type: 2}
+    - target: {fileID: 1000012062251526, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
+      propertyPath: m_Name
+      value: bouton_002
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de83010c5658b2e4b84fbf10fe44df89, type: 2}
   m_IsPrefabParent: 0
@@ -5089,6 +5113,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 714998593}
     m_Modifications:
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011365248310, guid: 608327214952ad44595f3977f9a61add, type: 2}
       propertyPath: m_LocalPosition.x
       value: 11.81
@@ -5125,6 +5154,11 @@ Prefab:
       propertyPath: m_Name
       value: Node_003
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 994893087}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 608327214952ad44595f3977f9a61add, type: 2}
   m_IsPrefabParent: 0
@@ -5242,6 +5276,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 714998593}
     m_Modifications:
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011365248310, guid: 608327214952ad44595f3977f9a61add, type: 2}
       propertyPath: m_LocalPosition.x
       value: -10.359469
@@ -5282,6 +5321,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45.901
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1739115514}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 608327214952ad44595f3977f9a61add, type: 2}
   m_IsPrefabParent: 0
@@ -5421,6 +5465,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 714998593}
     m_Modifications:
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011365248310, guid: 608327214952ad44595f3977f9a61add, type: 2}
       propertyPath: m_LocalPosition.x
       value: -12.26531
@@ -5457,6 +5506,11 @@ Prefab:
       propertyPath: m_Name
       value: Node_004
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013564092782, guid: 608327214952ad44595f3977f9a61add,
+        type: 2}
+      propertyPath: Triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 238364376}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 608327214952ad44595f3977f9a61add, type: 2}
   m_IsPrefabParent: 0
@@ -5842,6 +5896,12 @@ MonoBehaviour:
   GazedAtMaterial: {fileID: 2100000, guid: daad62324deb0cf448e5c805c8459bff, type: 2}
   OverridePlacement: 0
   DistanceToNode: 3
+--- !u!114 &1739115514 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013104163746, guid: de83010c5658b2e4b84fbf10fe44df89,
+    type: 2}
+  m_PrefabInternal: {fileID: 1257114719}
+  m_Script: {fileID: 11500000, guid: 6c63ef2a17e298840a88f0773a3c26c1, type: 3}
 --- !u!1001 &1755311287
 Prefab:
   m_ObjectHideFlags: 0
