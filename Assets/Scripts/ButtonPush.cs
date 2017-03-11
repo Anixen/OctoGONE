@@ -23,5 +23,7 @@ public class ButtonPush : MonoBehaviour
 
         gameObject.GetComponent<Trigger>().Lock();
         gameObject.GetComponent<Triggerable>().Lock();
+
+        Level_3_Manager.instance.UpdateLevelState();
     }
 }
