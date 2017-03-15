@@ -32,6 +32,8 @@ public class Level_0_Manager : MonoBehaviour
     void Start()
     {
         porte_000.OpenPortal();
+        porte_002.OpenPortal();
+        porte_003.OpenPortal();
     }
 
     // Update is called once per frame

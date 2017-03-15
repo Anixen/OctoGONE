@@ -3317,6 +3317,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013422928980, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9,
+        type: 2}
+      propertyPath: destinationScene
+      value: level_04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9, type: 2}
   m_IsPrefabParent: 0
@@ -3459,6 +3464,11 @@ Prefab:
     - target: {fileID: 1000010860693022, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013422928980, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9,
+        type: 2}
+      propertyPath: destinationScene
+      value: level_03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9, type: 2}
@@ -3784,15 +3794,15 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010300262420, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9,
-        type: 2}
-      propertyPath: locked
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114000013422928980, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9,
         type: 2}
       propertyPath: destinationScene
-      value: level_01
+      value: evel_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013422928980, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5dc2d462d742bdf40aebbb85b3a1b7b9, type: 2}
