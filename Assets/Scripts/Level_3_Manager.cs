@@ -27,6 +27,8 @@ public class Level_3_Manager : MonoBehaviour
     private bool path_2_revaled = false;
     private bool path_3_revaled = false;
 
+    private PortalOpen portal;
+
     void Awake()
     {
         instance = this;
@@ -48,6 +50,8 @@ public class Level_3_Manager : MonoBehaviour
         passerelle_011 = GameObject.Find("level3_passerelle_rectangulaire_011");
         passerelle_012 = GameObject.Find("level3_passerelle_rectangulaire_012");
         passerelle_013 = GameObject.Find("level3_passerelle_rectangulaire_013");
+
+        portal = GameObject.Find("level3_portail").GetComponent<PortalOpen>();
     }
 
     // Use this for initialization
@@ -72,6 +76,8 @@ public class Level_3_Manager : MonoBehaviour
         passerelle_011.SetActive(false);
         passerelle_012.SetActive(false);
         passerelle_013.SetActive(false);
+
+        portal.OpenPortal();
 
     }
 

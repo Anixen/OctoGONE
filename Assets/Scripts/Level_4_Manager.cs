@@ -16,6 +16,8 @@ public class Level_4_Manager : MonoBehaviour
 
     private RevealPassage passage_rochers;
 
+    private PortalOpen portal;
+
     void Awake()
     {
         instance = this;
@@ -39,6 +41,8 @@ public class Level_4_Manager : MonoBehaviour
         chestOpened = false;
         
         passage_rochers = GameObject.Find("passage_rochers").GetComponent<RevealPassage>();
+
+        portal = GameObject.Find("Portail").GetComponent<PortalOpen>();
     }
 
     // Use this for initialization
@@ -51,6 +55,8 @@ public class Level_4_Manager : MonoBehaviour
 
         passage_rochers.Hide();
         passage_rochers.GetComponent<Triggerable>().Lock();
+
+        portal.OpenPortal();
     }
 	
 	// Update is called once per frame
