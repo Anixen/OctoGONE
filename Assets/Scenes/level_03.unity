@@ -7035,7 +7035,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 714076af8d287ce499dac3593b9b11d9, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 714076af8d287ce499dac3593b9b11d9, type: 3}
       propertyPath: m_ReflectionProbeUsage
