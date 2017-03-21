@@ -6931,49 +6931,6 @@ Prefab:
       propertyPath: m_Name
       value: statue_003
       objectReference: {fileID: 0}
-    - target: {fileID: 23000010706861766, guid: 8bc28d983d90a954ca6457327fa3b1ce,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bff436e1682bb984789ccd98e4b8dfa3, type: 2}
-    - target: {fileID: 23000011444710618, guid: 8bc28d983d90a954ca6457327fa3b1ce,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6e3ac6e47b4d7a44685dfef9bf209413, type: 2}
-    - target: {fileID: 1000014248429998, guid: 8bc28d983d90a954ca6457327fa3b1ce, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010635120154, guid: 8bc28d983d90a954ca6457327fa3b1ce, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000010635120154, guid: 8bc28d983d90a954ca6457327fa3b1ce, type: 2}
-      propertyPath: m_Name
-      value: "t\xEAte_002"
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000012659318536, guid: 8bc28d983d90a954ca6457327fa3b1ce, type: 2}
-      propertyPath: m_Name
-      value: tete_rotator_003
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012372008736, guid: 8bc28d983d90a954ca6457327fa3b1ce, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0.2164396
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012372008736, guid: 8bc28d983d90a954ca6457327fa3b1ce, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.97629607
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000012372008736, guid: 8bc28d983d90a954ca6457327fa3b1ce, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000011618043868, guid: 8bc28d983d90a954ca6457327fa3b1ce,
-        type: 2}
-      propertyPath: correctRotationIndex
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bc28d983d90a954ca6457327fa3b1ce, type: 2}
   m_IsPrefabParent: 0
